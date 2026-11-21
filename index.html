@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios de comandos Linux: Permisos y Seguridad</title>
+    <meta name="description" content="Hola bienvenid@ a mi pagina de práctica de comandos Linux, soy Manuel Marcos Porras">
+    <link rel="icon" type="image/x-icon" href="linux.ico">
+    <link rel="apple-touch-icon" href="linux.ico">
+    <meta name="theme-color" content="#f1d863">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website">
+    <meta property="og:title" name="twitter:title" content="Ejercicios de practica de CSS- Manuel Marcos Porras">
+    <meta property="og:description" name="twitter:description"
+        content="Hola bienvenid@ a mi pagina de práctica de comandos linux, soy Manuel Marcos Porras">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+   <header>
+        <nav class="navbar navbar-color">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html" rel="noopener">
+                    <img src="linux.png" alt="Carpeta archivos linux"
+                        width="42" height="42">
+                      <h1>Ejercicios de comandos Linux</h1>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+<div class="bloque">
+      <h2>Comandos básicos</h2>
+      <details>        
+        <summary>Ejercicio 1: Mostrar tu nombre de usuario         
+          <p>Usa el comando que te da tu nombre de usuario</p>
+        </summary>
+        <pre><code>whoami</code></pre>
+      </details>
+
+      <details>
+        <summary>Ejercicio 2: Ver tu directorio actual          
+          <p>Usa el comando que te da el directorio actual</p>
+        </summary>
+        <pre><code>pwd</code></pre>
+      </details>
+
+      <details>
+        <summary>Ejercicio 3: Listar archivos incluyendo ocultos
+          <p>Visualiza todos los archivos, incluidos los ocultos (los que empiezan con punto).</p>
+        </summary>
+        <pre><code>ls -a</code></pre>
+      </details>
+
+      <details>
+        <summary>Ejercicio 4: Consultar el contenido de un archivo
+          <p>Ver el contenido de un archivo de texto sin modificarlo.</p>
+        </summary>
+        <pre><code>cat informe.txt</code></pre>
+      </details>
+
+      <details>
+        <summary>Ejercicio 5: Buscar la ubicación de un comando
+          <p>Localiza la ruta exacta del comando ls.</p>
+        </summary>
+        <pre><code>which ls</code></pre>
+      </details>
+ <details>
+        <summary>Ejercicio 6: Crear un archivo rápidamente
+          <p>Crea un archivo y añade texto básico de una sola vez.</p>
+        </summary>
+        <pre><code>
+echo "Hola mundo" > hola.txt
+cat hola.txt</code></pre>
+      </details>
+
+      <details>
+        <summary>Ejercicio 7: Borrar un archivo
+          <p>Elimina el archivo hola.txt</p>
+        </summary>
+        <pre><code>rm hola.txt</code></pre>
+      </details>
+
+      <details>
+        <summary>Ejercicio 8: Cambiar de directorio
+          <p> Navega por la estructura de carpetas subiendo al directorio superior al que estas.</p>
+        </summary>
+        <pre><code>cd ..</code></pre>
+      </details>
+
+      <details>
+        <summary>Ejercicio 9: Crear un árbol de carpetas
+          <p>Crea varias carpetas anidadas en un solo paso. Queremos la carpeta css que está dentro de web que, a su vez, está dentro de proyectos</p>
+        </summary>
+        <pre><code>mkdir -p proyectos/web/css</code></pre>
+      </details>
+
+      <details>
+        <summary>Ejercicio 10: Ver el historial de comandos
+          <p>Revisa lo que has ejecutado anteriormente.</p>
+        </summary>
+        <pre><code>history</code></pre>
+      </details>
+  </div>
+  <div class="bloque">
+     <h2>Gestión avanzada de archivos y directorios</h2>
+     <details>
+          <summary>Ejercicio 1: Crear un entorno de pruebas
+            <p><strong>Objetivo:</strong> Familiarizarse con la terminal, crear una carpeta segura y un entorno de trabajo para el resto de ejercicios.</p>
+            <p>Crea una carpeta llamada pruebas y dentro un archivo datos.txt</p>
+          </summary>
+          <pre><code>
+              mkdir ~/pruebas
+              cd ~/pruebas
+              touch datos.txt</code></pre>
+        </details>
+     <details>
+      <summary>Ejercicio 2: Buscar archivos por nombre
+        <p>Encuentra todos los archivos llamados "datos.txt" en tu directorio personal.</p>
+      </summary>
+      <pre><code>find ~ -name datos.txt</code></pre>
+    </details>
+
+    <details>
+      <summary>Ejercicio 3: Ver tipo de archivo
+        <p>Determina el tipo de archivo de cualquier archivo, útil si no estás seguro de su contenido.</p>
+      </summary>
+      <pre><code>file datos.txt</code></pre>
+    </details>
+
+    <details>
+      <summary>Ejercicio 4: Copiar una estructura de directorios
+        <p>Copia todo el contenido de una carpeta (incluyendo subdirectorios y archivos).</p>
+      </summary>
+      <pre><code>
+cd ~        
+cp -r pruebas/ pruebas_copia/</code></pre>
+    </details>
+
+    <details>
+      <summary>Ejercicio 5: Mover archivos a otra carpeta
+        <p>Mueve el archivo datos.txt de pruebas_copia a la raiz de tu carpeta personal.</p>
+      </summary>
+      <pre><code>mv pruebas_copia/datos.txt ~ </code></pre>
+    </details>
+
+    <details>
+      <summary>Ejercicio 6: Borrar una carpeta completa
+        <p>Elimina la carpeta pruebas y todo su contenido. Precaución con este comando.</p>
+      </summary>
+      <pre><code>rm -r pruebas</code></pre>
+    </details>
+
+    <details>
+      <summary>Ejercicio 7: Ver solo los nombres de carpetas
+        <p>Filtra la salida de ls para ver solo directorios. Debes mostrar la carpeta en formato largo (-l) y filtrar solo los que su nomenclatura comienza por d de directory (usa grep  y una expresión regular) </p>
+      </summary>
+      <pre><code>ls -l | grep "^d"</code></pre>
+    </details>
+
+    <details>
+      <summary>Ejercicio 8: Ver archivos ordenados por fecha de modificación
+        <p>Muestra los archivos ordenados de más reciente a más antiguo.</p>
+      </summary>
+      <pre><code>ls -lt</code></pre>
+    </details>
+
+    <details>
+      <summary>Ejercicio 9: Crear una copia de seguridad rápida
+        <p>Crea un archivo comprimido en formato tar.gz con el contenido de la carpeta.</p>
+      </summary>
+      <pre><code>tar -czf respaldo.tar.gz pruebas_copia/</code></pre>
+    </details>    
+
+    <details>
+      <summary>Ejercicio 10: Mostrar ruta absoluta de un archivo
+        <p>Muestra la ruta completa del archivo datos.txt.</p>
+      </summary>
+      <pre><code>readlink -f datos.txt</code></pre>
+    </details>
+  </div>
+  <div class="bloque">
+     <h2>Permisos y Seguridad</h2>
+  <details>
+    <summary>Ejercicio 1: Crear un entorno de pruebas
+      <p><strong>Objetivo:</strong> Familiarizarse con la terminal, crear una carpeta segura y un entorno de trabajo para el resto de ejercicios.</p>
+      <p>Crea una carpeta llamada seguridad y dentro un archivo datos.txt, un archivo informe.txt y un archivo config.sh</p>
+    </summary>
+    <pre><code>
+        mkdir ~/seguridad
+        cd ~/seguridad
+        touch datos.txt informe.txt config.sh</code></pre>
+  </details>
+
+  <details>
+    <summary>Ejercicio 2: Ver permisos actuales
+      <p><strong>Objetivo:</strong> Entender la estructura de permisos de archivos y directorios en Linux.</p>
+      <p>Lista los archivos de tu carpeta y analiza los permisos de cada uno.</p>
+    </summary>
+    <pre><code>
+        ls -l</code></pre>
+  </details>
+
+  <details>
+    <summary>Ejercicio 3: Cambiar permisos de lectura y escritura
+      <p><strong>Objetivo:</strong> Restringir el acceso a un archivo solo al propietario.</p>
+      <p>Aplica permisos 600 al archivo datos.txt y comprueba el resultado.</p>
+    </summary>
+    <pre><code>
+        chmod 600 datos.txt
+        ls -l datos.txt</code></pre>
+  </details>
+
+  <details>
+    <summary>Ejercicio 4: Otorgar permiso de ejecución
+      <p><strong>Objetivo:</strong> Convertir un archivo de texto en un script ejecutable.</p>
+      <p>Concede permiso de ejecución al archivo config.sh y ejecútalo.</p>
+    </summary>
+    <pre><code>
+        chmod +x config.sh
+        ls -l config.sh
+        ./config.sh</code></pre>
+  </details>
+
+  <details>
+    <summary>Ejercicio 5: Cambiar propietario y grupo
+      <p><strong>Objetivo:</strong> Modificar la propiedad de un archivo para otro usuario o grupo.</p>
+      <p>Averigua tu usuario actual y cambia el propietario de datos.txt.</p>
+    </summary>
+    <pre><code>
+        whoami
+        id
+        chown tu_usuario:tu_grupo datos.txt</code></pre>
+  </details>
+
+  <details>
+    <summary>Ejercicio 6: Crear un archivo que el grupo no pueda modificar
+      <p><strong>Objetivo:</strong> Controlar la visibilidad de un archivo según pertenencia a grupo.</p>
+      <p>Crea un archivo informe.txt con permisos de escritura y lectura para el propietario (6), solo lectura para el grupo (4) y sin permisos para otros (0)</p>
+    </summary>
+    <pre><code>
+        touch informe.txt
+        chmod 640 informe.txt</code></pre>
+  </details>
+
+  <details>
+    <summary>Ejercicio 7: Proteger una carpeta con permisos mínimos
+      <p><strong>Objetivo:</strong> Restringir el acceso a un directorio solo al propietario.</p>
+      <p>Crea una carpeta confidencial y asigna permisos 700.</p>
+    </summary>
+    <pre><code>
+        mkdir confidencial
+        chmod 700 confidencial</code></pre>
+  </details>
+
+  <details>
+    <summary>Ejercicio 8: Comprobar permisos con stat
+      <p><strong>Objetivo:</strong> Usar herramientas para ver información extendida de archivos.</p>
+      <p>Consulta con stat los detalles del archivo informe.txt.</p>
+    </summary>
+    <pre><code>
+        stat informe.txt</code></pre>
+  </details>
+
+  <details>
+    <summary>Ejercicio 9: Cambiar permisos simbólicamente
+      <p><strong>Objetivo:</strong> Aplicar permisos mediante letras en lugar de números.</p>
+      <p>Asigna permisos de lectura y escritura al usuario, solo lectura al grupo y nada a otros en informe.txt. Usa la notación sin números (rwx)</p>
+    </summary>
+    <pre><code>
+        chmod u=rw,g=r,o= informe.txt
+        ls -l informe.txt</code></pre>
+  </details>
+
+  <details>
+    <summary>Ejercicio 10: Recuperar permisos estándar
+      <p><strong>Objetivo:</strong> Restaurar permisos comunes para compartir archivos de forma segura.</p>
+        <ul>
+    <li><strong>Archivo informe.txt</strong>: 
+      <ul>
+        <li>Usuario (propietario): lectura y escritura</li>
+        <li>Grupo: solo lectura</li>
+        <li>Otros: solo lectura</li>
+      </ul>
+    </li>
+    <li><strong>Carpeta confidencial</strong>: 
+      <ul>
+        <li>Usuario (propietario): lectura, escritura y ejecución</li>
+        <li>Grupo y otros: lectura y ejecución</li>
+      </ul>
+    </li>
+  </ul>
+    </summary>
+    <pre><code>
+        chmod 644 informe.txt
+        chmod 755 confidencial</code></pre>
+  </details>
+</div>  
+
+  <footer class="footer mt-auto bg-color-footer">
+        <div class="container py-2">
+            <p>Diseñado por Manuel Marcos Porras </p>
+        </div>
+    </footer>
+</body>
+</html>
